@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+               bat "mvn package"
                echo 'Building..' 
               
             }
@@ -18,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                bat "clean deploy"
+                
             }
         }
     }
